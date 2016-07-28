@@ -62,5 +62,17 @@ public class FirstService {
 		Response response = Response.status(200).header("Access-Control-Allow-Origin", "*").entity(new JSONObject(jsonInString)).build();
 		return response;
 	}
+	
+	@GET
+	@Path("listjson")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<String> getHumanListJson() {
+		List<String> list = new ArrayList<String>();
+		list.add("Abhishek");
+		list.add("Kalpesh");
+		list.add("Siddhesh");
+		//new JSONObject
+		return list;
+	}
 
 }
